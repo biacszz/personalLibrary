@@ -17,15 +17,15 @@ O objetivo principal é permitir que o usuário:
 
 O código foi modularizado em classes e um único `namespace` (`BibliotecaPessoal`), refletindo uma arquitetura limpa e manutenível.
 
-| Arquivo (`.cs`) | Tipo | Responsabilidade (TAD) |
+| Arquivo (`.cs`) | Tipo | Responsabilidade |
 | :--- | :--- | :--- |
 | `ItemEstante.cs` | Classe Abstrata/Enum | Define a base comum para todos os itens (Título, Autor, Status, Avaliação) e o enum `StatusLeitura`. |
 | `Livro.cs` | Classe Concreta | Item genérico que herda de `ItemEstante`. |
 | `Gibi.cs` | Classe Concreta | Item específico que herda de `ItemEstante` e adiciona `Editora` e `NumeroEdicao`. |
 | `IEstante.cs` | Interface | Define o contrato de gerenciamento (Adicionar, Remover, Listar, Buscar). |
 | `Estante.cs` | Classe Concreta | Implementa a interface `IEstante`, usando uma `List<ItemEstante>` para armazenar os itens. |
-| `Leitor.cs` | Classe | Representa o usuário e contém a instância da `Estante`. |
-| `Persistencia.cs` | Classe Estática | Responsável por salvar e carregar os dados no arquivo `estante.txt`. |
+| `Leitor.cs` | Classe Concreta | Representa o usuário e estabelece relação de agregação para com `Estante`. |
+| `Arquivos.cs` | Classe Estática | Responsável por salvar e carregar os dados no arquivo `estante.txt`. |
 | `Program.cs` | Principal | Contém o método `Main()` e a lógica de interação (Menu) com o usuário. |
 
 -----
@@ -74,6 +74,7 @@ O programa oferece as seguintes opções principais no menu:
 | **4** | Remover Item | Permite remover um item da estante buscando pelo título. |
 | **5** | Registrar Leitura | Altera o `StatusLeitura` de um item (Lendo, Lido, etc.). |
 | **6** | Avaliar Item | Atribui uma avaliação de 0 a 5 estrelas. |
+| **7** | Buscar Item | Possibilita a busca de um item da estante por meio do seu título, ou parte dele. |
 | **8** | Listar por Status | Filtra e exibe itens com um status específico (ex: todos os `Lidos`). |
 | **9/10** | Salvar/Carregar | Usa a classe `Persistencia` para gravar/ler o estado da estante em `estante.txt`. |
 
