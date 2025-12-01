@@ -15,7 +15,7 @@ O objetivo principal é permitir que o usuário:
 
 ## Estrutura do Projeto (Modularização POO)
 
-O código foi modularizado em classes e um único `namespace` (`BibliotecaPessoal`), refletindo uma arquitetura limpa e manutenível.
+O código foi modularizado em classes e um único `namespace` (`personalLibrary`), refletindo uma arquitetura limpa e manutenível.
 
 | Arquivo (`.cs`) | Tipo | Responsabilidade |
 | :--- | :--- | :--- |
