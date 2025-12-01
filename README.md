@@ -24,7 +24,7 @@ O código foi modularizado em classes e um único `namespace` (`personalLibrary`
 | `Gibi.cs` | Classe Concreta | Item específico que herda de `ItemEstante` e adiciona `Editora` e `NumeroEdicao`. |
 | `IEstante.cs` | Interface | Define o contrato de gerenciamento (Adicionar, Remover, Listar, Buscar). |
 | `Estante.cs` | Classe Concreta | Implementa a interface `IEstante`, usando uma `List<ItemEstante>` para armazenar os itens. |
-| `Leitor.cs` | Classe Concreta | Representa o usuário e estabelece relação de agregação para com `Estante`. |
+| `Leitor.cs` | Classe Concreta | Representa o usuário e estabelece relação de associação para com `Estante`. |
 | `Arquivos.cs` | Classe Estática | Responsável por salvar e carregar os dados no arquivo `estante.txt`. |
 | `Program.cs` | Principal | Contém o método `Main()` e a lógica de interação (Menu) com o usuário. |
 
